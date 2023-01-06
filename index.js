@@ -27,6 +27,9 @@ app.use((req, res, next) => {
 })
 app.use((err, req, res, next) => res.status(500).send("Something went wrong!. Please try again later"));
 
-app.listen(8000, () => {
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
+
+app.listen(PORT, () => {
     console.log("Express server is running on port 8000");
 });

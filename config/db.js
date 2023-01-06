@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-
-const dbServerUrl = "mongodb+srv://aryan:aryan@aryandb.72kyzaf.mongodb.net/?retryWrites=true&w=majority";
+const dbServerUrl = process.env.MONGODB_URL;
 
 function dbConnection() {
     mongoose.set("strictQuery", true);

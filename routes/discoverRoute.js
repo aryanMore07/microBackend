@@ -6,7 +6,7 @@ const GalleryModel = require("../models/gallary");
 route.get("/like/:imageId", async (req, res, next) => {
 
     try {
-        const imageId = req.params.imageId;
+        const imageId = req.body.imageId;
 
         if(!imageId) {
             res.status(400).send("Bad Request");
@@ -39,10 +39,10 @@ route.get("/like/:imageId", async (req, res, next) => {
 
 route.get("/discover/:category/:shuffle", async (req, res, next) => {
     try {
-        const category = req.params.category;
-        const shuffle = req.params.shuffle;
-        const sortByDate = req.params.sortByDate;
-        const filterByLike = req.params.filterByLike;
+        const category = req.body.category;
+        const shuffle = req.body.shuffle;
+        const sortByDate = req.body.sortByDate;
+        const filterByLike = req.body.filterByLike;
 
         if(!category) {
             res.status(400).send("Bad Request");
